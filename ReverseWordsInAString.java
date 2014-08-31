@@ -1,6 +1,8 @@
 /*
  * 原题链接：https://oj.leetcode.com/problems/reverse-words-in-a-string/
  * 2014.08.27
+ *
+ * 主要知识点：String中split()方法和trim()方法的应用。
  */
 
 public class ReverseWordsInAString {

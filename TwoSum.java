@@ -1,6 +1,8 @@
 /* 
  * 原题链接：https://oj.leetcode.com/problems/two-sum/
  * 2014.08.31
+ *
+ * 主要知识点：“并行”。
  */
 
 import java.util.HashMap;
