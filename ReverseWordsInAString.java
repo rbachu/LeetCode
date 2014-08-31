@@ -1,7 +1,5 @@
 /*
- * 22 / 22 test cases passed.
- * Runtime: 656 ms
- *
+ * 原题链接：https://oj.leetcode.com/problems/reverse-words-in-a-string/
  * 2014.08.27
  */
 
