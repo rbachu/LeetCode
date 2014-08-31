@@ -8,6 +8,8 @@
 
  - [Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "Search for a Range")
 
+ - [Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "Reverse Integer")
+
  - [Two Sum](https://oj.leetcode.com/problems/two-sum/ "Two Sum")
 
  - 未完待续。
