@@ -8,6 +8,8 @@
 
  - [Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "Sort Colors")
 
+ - [Search Insert Position](https://oj.leetcode.com/problems/search-insert-position/ "Search Insert Position")
+
  - [Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "Search for a Range")
 
  - [Remove Element](https://oj.leetcode.com/problems/remove-element/ "Remove Element")
