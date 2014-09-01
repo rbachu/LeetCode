@@ -10,6 +10,8 @@
 
  - [Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "Search for a Range")
 
+ - [Remove Element](https://oj.leetcode.com/problems/remove-element/ "Remove Element")
+
  - [Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "Reverse Integer")
 
  - [Two Sum](https://oj.leetcode.com/problems/two-sum/ "Two Sum")
