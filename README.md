@@ -6,6 +6,8 @@
 
  - [Single Number](https://oj.leetcode.com/problems/single-number/ "Single Number")
 
+ - [Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "Sort Colors")
+
  - [Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "Search for a Range")
 
  - [Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "Reverse Integer")
