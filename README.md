@@ -6,6 +6,8 @@
 
  - [Single Number](https://oj.leetcode.com/problems/single-number/ "Single Number")
 
+ - [Merge Sorted Array](https://oj.leetcode.com/problems/merge-sorted-array/ "Merge Sorted Array")
+
  - [Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "Sort Colors")
 
  - [Search Insert Position](https://oj.leetcode.com/problems/search-insert-position/ "Search Insert Position")
