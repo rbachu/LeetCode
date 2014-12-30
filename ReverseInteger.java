@@ -4,9 +4,10 @@
  *
  * 主要知识点：Integer.MAX_VALUE（Integer.MIN_VALUE）
  */
+ 
 public class ReverseInteger {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 
@@ -19,7 +20,7 @@ class Solution {
             x = -x;
             isNeg = true;
         }
-        
+
         /*
          * 没啥好说的；
          * 不过这里直接使用了数乘的方式

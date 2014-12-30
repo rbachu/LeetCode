@@ -1,4 +1,4 @@
-/* 
+/*
  * 原题链接：https://oj.leetcode.com/problems/single-number/
  * 2014.08.31
  *
@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class SingleNumber {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 
@@ -17,7 +17,7 @@ class Solution {
     public int singleNumber(int[] arr) {
         int result = 0;
 
-        /* 
+        /*
          * 首先对数组进行排序，
          * 然后直接对比相邻的前后项就完事了。
          *

@@ -1,4 +1,4 @@
-/* 
+/*
  * 原题链接：https://oj.leetcode.com/problems/sort-colors/
  * 2014.09.01
  *
@@ -10,7 +10,7 @@ import java.util.List;
 
 public class SortColors {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 

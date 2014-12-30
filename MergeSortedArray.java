@@ -4,13 +4,14 @@
  *
  * 主要知识点：无
  */
+ 
 public class MergeSortedArray {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 
-/* 
+/*
  * 和以往的思路不同。
  * 在这里直接使用了倒序的方法，
  * 直接腾出了足够的空间进行拼接；

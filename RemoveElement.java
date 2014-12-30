@@ -10,7 +10,7 @@ import java.util.List;
 
 public class RemoveElement {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 
@@ -32,7 +32,7 @@ public class RemoveElement {
  *         } else {
  *             if (count > 0) {
  *                 arr[i - count] = arr[i];
- *             
+ *
  *             }
  *         }
  *     }

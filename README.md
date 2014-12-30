@@ -1,27 +1,29 @@
-这是我在[LeetCode OJ](https://oj.leetcode.com/ "LeetCode OJ")的刷题集，关键的思路都写在注释中。
+这是我在[LeetCode OJ](https://oj.leetcode.com/ "LeetCode OJ")的刷题集，详情参见__注释__。
+
+__未完待续！！！__
 
 ## 已完成
 
- - [Reverse Words in a String](https://oj.leetcode.com/submissions/detail/10373404/ "Reverse Words in a String")
+ - [171. Excel Sheet Column Number](https://oj.leetcode.com/problems/excel-sheet-column-number/ "171. Excel Sheet Column Number")
 
- - [Single Number](https://oj.leetcode.com/problems/single-number/ "Single Number")
+ - [151. Reverse Words in a String](https://oj.leetcode.com/submissions/detail/10373404/ "151. Reverse Words in a String")
 
- - [Merge Sorted Array](https://oj.leetcode.com/problems/merge-sorted-array/ "Merge Sorted Array")
+ - [136. Single Number](https://oj.leetcode.com/problems/single-number/ "136. Single Number")
 
- - [Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "Sort Colors")
+ - [88. Merge Sorted Array](https://oj.leetcode.com/problems/merge-sorted-array/ "88. Merge Sorted Array")
 
- - [Search Insert Position](https://oj.leetcode.com/problems/search-insert-position/ "Search Insert Position")
+ - [75. Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "75. Sort Colors")
 
- - [Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "Search for a Range")
+ - [35. Search Insert Position](https://oj.leetcode.com/problems/search-insert-position/ "35. Search Insert Position")
 
- - [Remove Element](https://oj.leetcode.com/problems/remove-element/ "Remove Element")
+ - [34. Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "34. Search for a Range")
 
- - [Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "Reverse Integer")
+ - [27. Remove Element](https://oj.leetcode.com/problems/remove-element/ "27. Remove Element")
 
- - [Two Sum](https://oj.leetcode.com/problems/two-sum/ "Two Sum")
+ - [7. Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "7. Reverse Integer")
 
- - 未完待续。
+ - [1. Two Sum](https://oj.leetcode.com/problems/two-sum/ "1. Two Sum")
 
 ## License
 
-[The MIT License (MIT)](http://opensource.org/licenses/MIT "The MIT License (MIT)")
+_[The MIT License (MIT)](http://opensource.org/licenses/MIT "The MIT License (MIT)")_

@@ -1,4 +1,4 @@
-/* 
+/*
  * 原题链接：https://oj.leetcode.com/problems/two-sum/
  * 2014.08.31
  *
@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class TwoSum {
     public static void main(String[] args) {
-        /* System.out.println() */
+        /* 测试 */
     }
 }
 
@@ -19,7 +19,7 @@ class Solution {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
 
-        /* 
+        /*
          * 在这里用到了非常巧妙的思想，
          * 我们知道，要查找数字元素，
          * 使用现有的数据结构中的一些方法是比较简单的选择；
