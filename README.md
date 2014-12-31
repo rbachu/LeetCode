@@ -24,6 +24,8 @@ __未完待续！！！__
 
  - [27. Remove Element](https://oj.leetcode.com/problems/remove-element/ "27. Remove Element")
 
+ - [14. Longest Common Prefix](https://oj.leetcode.com/problems/longest-common-prefix/ "14. Longest Common Prefix")
+
  - [7. Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "7. Reverse Integer")
 
  - [1. Two Sum](https://oj.leetcode.com/problems/two-sum/ "1. Two Sum")
