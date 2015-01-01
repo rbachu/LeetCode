@@ -18,6 +18,8 @@ __未完待续！！！__
 
  - [75. Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "75. Sort Colors")
 
+ - [43. Multiply Strings](https://oj.leetcode.com/problems/multiply-strings/ "Multiply Strings")
+
  - [35. Search Insert Position](https://oj.leetcode.com/problems/search-insert-position/ "35. Search Insert Position")
 
  - [34. Search for a Range](https://oj.leetcode.com/problems/search-for-a-range/ "34. Search for a Range")
