@@ -34,6 +34,8 @@ __未完待续！！！__
 
  - [14. Longest Common Prefix](https://oj.leetcode.com/problems/longest-common-prefix/ "14. Longest Common Prefix")
 
+ - [9. Palindrome Number](https://oj.leetcode.com/problems/palindrome-number/ "9. Palindrome Number")
+
  - [7. Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "7. Reverse Integer")
 
  - [1. Two Sum](https://oj.leetcode.com/problems/two-sum/ "1. Two Sum")
