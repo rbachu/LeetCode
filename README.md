@@ -6,6 +6,8 @@ __未完待续！！！__
 
  - [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/ "Number of 1 Bits")
 
+ - [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/ "Reverse Bits")
+
  - [171. Excel Sheet Column Number](https://oj.leetcode.com/problems/excel-sheet-column-number/ "171. Excel Sheet Column Number")
 
  - [169. Majority Element](https://oj.leetcode.com/problems/majority-element/ "169. Majority Element")
