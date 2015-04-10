@@ -42,6 +42,8 @@ __未完待续！！！__
 
  - [27. Remove Element](https://oj.leetcode.com/problems/remove-element/ "27. Remove Element")
 
+ - [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/ "20. Valid Parentheses")
+
  - [14. Longest Common Prefix](https://oj.leetcode.com/problems/longest-common-prefix/ "14. Longest Common Prefix")
 
  - [9. Palindrome Number](https://oj.leetcode.com/problems/palindrome-number/ "9. Palindrome Number")
