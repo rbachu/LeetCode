@@ -11,13 +11,14 @@ public class HouseRobber {
 }
 
 /*
- * 参考链接：https://leetcode.com/discuss/30277/java-o-n-dp-solution-with-13-lines-clean-code
  * 解题思路：
  *    考虑num[n - 1]房子的状态无非两种，一种是被抢，一种则不被抢；
  *        1. 如果被抢，则总钱数为前n - 2间房子中抢到的钱 + num[n - 1]；
  *        2. 如果不被抢，则总钱数为前n - 1间房子中抢到的钱；
  *    向前递推。
  *    只需要返回上述两种情况中最大的那个值即可。
+ *
+ * 参考链接：https://leetcode.com/discuss/30277/java-o-n-dp-solution-with-13-lines-clean-code
  */
 class Solution {
     public int rob(int[] num) {
