@@ -10,6 +10,8 @@ __未完待续！！！__
 
  - [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/ "190. Reverse Bits")
 
+ - [189. Rotate Array](https://leetcode.com/problems/rotate-array/ "189. Rotate Array")
+
  - [171. Excel Sheet Column Number](https://oj.leetcode.com/problems/excel-sheet-column-number/ "171. Excel Sheet Column Number")
 
  - [169. Majority Element](https://oj.leetcode.com/problems/majority-element/ "169. Majority Element")
