@@ -4,9 +4,11 @@ __未完待续！！！__
 
 ## 已完成
 
- - [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/ "Number of 1 Bits")
+ - [198. House Robber](https://leetcode.com/problems/house-robber/ "198. House Robber")
 
- - [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/ "Reverse Bits")
+ - [191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/ "191. Number of 1 Bits")
+
+ - [190. Reverse Bits](https://leetcode.com/problems/reverse-bits/ "190. Reverse Bits")
 
  - [171. Excel Sheet Column Number](https://oj.leetcode.com/problems/excel-sheet-column-number/ "171. Excel Sheet Column Number")
 
