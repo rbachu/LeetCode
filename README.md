@@ -46,6 +46,8 @@ __未完待续！！！__
 
  - [27. Remove Element](https://oj.leetcode.com/problems/remove-element/ "27. Remove Element")
 
+ - [26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/ "26. Remove Duplicates from Sorted Array")
+
  - [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/ "20. Valid Parentheses")
 
  - [14. Longest Common Prefix](https://oj.leetcode.com/problems/longest-common-prefix/ "14. Longest Common Prefix")
