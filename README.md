@@ -28,6 +28,8 @@ __未完待续！！！__
 
  - [136. Single Number](https://oj.leetcode.com/problems/single-number/ "136. Single Number")
 
+ - [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/ "125. Valid Palindrome")
+
  - [88. Merge Sorted Array](https://oj.leetcode.com/problems/merge-sorted-array/ "88. Merge Sorted Array")
 
  - [75. Sort Colors](https://oj.leetcode.com/problems/sort-colors/ "75. Sort Colors")
