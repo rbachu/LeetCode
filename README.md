@@ -22,6 +22,8 @@ __未完待续！！！__
 
  - [165. Compare Version Numbers](https://oj.leetcode.com/problems/compare-version-numbers/ "165. Compare Version Numbers")
 
+ - [160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/ "160. Intersection of Two Linked Lists")
+
  - [155. Min Stack](https://oj.leetcode.com/problems/min-stack/ "155. Min Stack")
 
  - [151. Reverse Words in a String](https://oj.leetcode.com/submissions/detail/10373404/ "151. Reverse Words in a String")
