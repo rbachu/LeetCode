@@ -56,6 +56,8 @@ __未完待续！！！__
 
  - [9. Palindrome Number](https://oj.leetcode.com/problems/palindrome-number/ "9. Palindrome Number")
 
+ - [8. String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/ "String to Integer (atoi)")
+
  - [7. Reverse Integer](https://oj.leetcode.com/problems/reverse-integer/ "7. Reverse Integer")
 
  - [1. Two Sum](https://oj.leetcode.com/problems/two-sum/ "1. Two Sum")
