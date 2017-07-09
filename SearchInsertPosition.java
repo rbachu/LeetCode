@@ -1,17 +1,4 @@
-/*
- * 原题链接：https://oj.leetcode.com/problems/search-insert-position/
- * 2014.09.01
- *
- * 主要知识点：二分查找
- */
-
-public class SearchInsertPosition {
-    public static void main(String[] args) {
-        /* 测试 */
-    }
-}
-
-class Solution {
+public final class Solution {
     public int searchInsert(int[] arr, int target) {
         return search(arr, target, 0, arr.length - 1);
     }

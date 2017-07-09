@@ -1,8 +1,8 @@
-这是我在[LeetCode OJ](https://oj.leetcode.com/ "LeetCode OJ")的刷题集，详情参见__注释__。
+The solutions of [LeetCode](https://leetcode.com/problemset/all/ "LeetCode")
 
-__未完待续！！！__
+**TO BE CONTINUE**.
 
-## 已完成
+## FINISHED
 
  - [198. House Robber](https://leetcode.com/problems/house-robber/ "198. House Robber")
 
@@ -64,4 +64,4 @@ __未完待续！！！__
 
 ## License
 
-_[The MIT License (MIT)](https://github.com/mthli/LeetCode/blob/master/LICENSE.txt "The MIT License (MIT)")_
+*[The MIT License (MIT)](https://github.com/mthli/LeetCode/blob/master/LICENSE "The MIT License (MIT)")*

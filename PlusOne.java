@@ -1,22 +1,8 @@
-/*
- * 原题链接：https://oj.leetcode.com/problems/plus-one/
- * 2015.01.02
- *
- * 主要知识点：无
- */
-
 import java.util.Arrays;
 
-public class PlusOne {
-    public static void main(String[] args) {
-        /* 测试 */
-    }
-}
-
-class Solution {
+public final class Solution {
     public int[] plusOne(int[] digit) {
         int[] result = new int[digit.length + 1];
-
         int flag = digit.length;
         int carry = 0;
 

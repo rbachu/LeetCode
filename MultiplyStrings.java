@@ -1,17 +1,4 @@
-/*
- * 原题链接：https://oj.leetcode.com/problems/multiply-strings/
- * 2015.01.01
- *
- * 主要知识点：无
- */
-
-public class MultiplyStrings {
-    public static void main(String[] args) {
-        /* 测试 */
-    }
-}
-
-class Solution {
+public final class Solution {
     public String multiply(String first, String second) {
         if (first.equals("0") || second.equals("0")) {
             return "0";
@@ -21,16 +8,15 @@ class Solution {
 
         for (int position = second.length() - 1, flag = first.length() + second.length() - 1; position >= 0; position--, flag--) {
             int lier = second.charAt(position) - '0';
-
             int index = flag;
             int carry = 0;
 
             for (int i = first.length() - 1; i >= 0; i--, index--) {
                 int value = (first.charAt(i) - '0') * lier;
-
                 values[position][index] = value % 10 + carry;
                 carry = value / 10;
             }
+
             values[position][index] = carry;
         }
 
@@ -49,7 +35,6 @@ class Solution {
         }
 
         String string = "";
-
         int begin = 0;
 
         while (result[begin] == 0) {

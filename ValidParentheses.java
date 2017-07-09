@@ -1,12 +1,6 @@
 import java.util.Stack;
 
-public class ValidParentheses {
-    public static void main(String[] args) {
-        // TODO
-    }
-}
-
-class Solution {
+public final class Solution {
     private static final char ROUND_LEFT = '(';
     private static final char ROUND_RIGHT = ')';
 
@@ -53,6 +47,7 @@ class Solution {
         if (!stack.empty()) {
             return false;
         }
+        
         return true;
     }
 }
