@@ -2,7 +2,7 @@ The solutions of [LeetCode](https://leetcode.com/problemset/all/ "LeetCode")
 
 **TO BE CONTINUE**.
 
-## FINISHED
+## Finished
 
  - [198. House Robber](https://leetcode.com/problems/house-robber/ "198. House Robber")
 
