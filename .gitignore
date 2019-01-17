@@ -23,6 +23,7 @@
 hs_err_pid*
 
 # Others
+out/
 .idea/
 *.iml
 *.DS_Store
