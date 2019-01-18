@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-import java.util.*
-
 /*
  * https://leetcode.com/problems/two-sum/
  *
@@ -37,7 +35,7 @@ import java.util.*
 class TwoSum() {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val result = IntArray(2)
-        val map = HashMap<Int, Int>()
+        val map = hashMapOf<Int, Int>()
 
         for (i in nums.indices) {
             val key = target - nums[i]

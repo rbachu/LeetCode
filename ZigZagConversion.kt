@@ -69,7 +69,7 @@ class ZigZagConversion {
         var column = 0
         var increase = true
 
-        for (i in 0 until s.length) {
+        for (i in s.indices) {
             matrix2d[row][column] = s[i]
 
             if (increase) {
