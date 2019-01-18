@@ -92,7 +92,6 @@ class ZigZagConversion {
         }
 
         val builder = StringBuilder()
-
         for (r in 0 until numRows) {
             for (c in 0 until numColumns) {
                 val temp = matrix2d[r][c]

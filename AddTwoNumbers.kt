@@ -57,6 +57,7 @@ class AddTwoNumbers {
 
         var n1 = l1.next
         var n2 = l2.next
+
         while (n1 != null || n2 != null) {
             val t = (n1?.`val` ?: 0) + (n2?.`val` ?: 0) + carry
             carry = t / 10

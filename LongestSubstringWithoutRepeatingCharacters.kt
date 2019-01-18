@@ -68,6 +68,7 @@ class LongestSubstringWithoutRepeatingCharacters {
                         } else {
                             list.clear()
                         }
+
                         break
                     }
                 }
@@ -75,6 +76,7 @@ class LongestSubstringWithoutRepeatingCharacters {
 
             list.add(c)
             set.add(c)
+
             if (maxLength < list.size) {
                 maxLength = list.size
             }

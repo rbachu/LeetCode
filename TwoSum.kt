@@ -41,6 +41,7 @@ class TwoSum() {
 
         for (i in nums.indices) {
             val key = target - nums[i]
+
             if (map.containsKey(key)) {
                 result[0] = map.getOrDefault(key, 0)
                 result[1] = i

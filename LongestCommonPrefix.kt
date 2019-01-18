@@ -23,41 +23,48 @@
  */
 
 /*
- * https://leetcode.com/problems/container-with-most-water/
+ * https://leetcode.com/problems/longest-common-prefix/
  *
- * Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).
- * n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
- * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ * If there is no common prefix, return an empty string "".
+ *
+ * Example 1:
+ * Input: ["flower","flow","flight"]
+ * Output: "fl"
+ *
+ * Example 2:
+ * Input: ["dog","racecar","car"]
+ * Output: ""
+ * Explanation: There is no common prefix among the input strings.
  *
  * Note:
- * You may not slant the container and n is at least 2.
- *
- * Example:
- * Input: [1,8,6,2,5,4,8,3,7]
- * Output: 49
+ * All given inputs are in lowercase letters a-z.
  */
-class ContainerWithMostWater {
-    fun maxArea(height: IntArray): Int {
-        var leftIndex = 0
-        var rightIndex = height.lastIndex
-        var maxArea = 0
-
-        while (leftIndex < rightIndex) {
-            val leftHeight = height[leftIndex]
-            val rightHeight = height[rightIndex]
-
-            val area = Math.abs(leftIndex - rightIndex) * Math.min(leftHeight, rightHeight)
-            if (maxArea < area) {
-                maxArea = area
-            }
-
-            if (leftHeight < rightHeight) {
-                leftIndex++
-            } else {
-                rightIndex--
-            }
+class LongestCommonPrefix {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        if (strs.isEmpty()) {
+            return ""
+        } else if (strs.size == 1) {
+            return strs[0]
         }
 
-        return maxArea
+        var prefix = ""
+        var index = 0
+
+        while (true) {
+            if (strs[0].lastIndex < index) {
+                return prefix
+            }
+
+            val c = strs[0][index]
+            for (i in 1 until strs.size) {
+                if (strs[i].lastIndex < index || strs[i][index] != c) {
+                    return prefix
+                }
+            }
+
+            prefix += c
+            index++
+        }
     }
 }

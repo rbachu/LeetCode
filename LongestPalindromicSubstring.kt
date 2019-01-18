@@ -45,6 +45,7 @@ class LongestPalindromicSubstring {
 
         var start = 0
         var window = s.length
+
         while (!isPalindromicString(s, start, start + window)) {
             if (start + window == s.length) {
                 start = 0
@@ -64,6 +65,7 @@ class LongestPalindromicSubstring {
     private fun isPalindromicString(s: String, from: Int, to: Int): Boolean {
         var start = from
         var end = to - 1
+
         while (s[start] == s[end]) {
             start++
             end--
