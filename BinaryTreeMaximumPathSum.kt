@@ -48,22 +48,15 @@ class TreeNode(var `val`: Int) {
 }
 
 class BinaryTreeMaximumPathSum {
-    private val list = mutableListOf<Int>()
+    private var max = Int.MIN_VALUE
 
     fun maxPathSum(root: TreeNode?): Int {
         if (root == null) {
             return 0
         }
 
+        max = Int.MIN_VALUE
         lrd(root)
-
-        var max = list[0]
-        for (i in 0 until list.size) {
-            if (max < list[i]) {
-                max = list[i]
-            }
-        }
-
         return max
     }
 
@@ -76,7 +69,9 @@ class BinaryTreeMaximumPathSum {
         sum = Math.max(sum, current + left)
         sum = Math.max(sum, current + right)
         sum = Math.max(sum, current + left + right)
-        list.add(sum)
+        if (max < sum) {
+            max = sum
+        }
 
         var result = current
         result = Math.max(result, current + left)
