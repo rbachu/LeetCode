@@ -22,8 +22,6 @@
  * THE SOFTWARE.
  */
 
-import java.util.*
-
 /*
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  *
@@ -46,6 +44,9 @@ import java.util.*
  *              Note that the answer must be a substring,
  *              "pwke" is a subsequence and not a substring.
  */
+
+import java.util.*
+
 class LongestSubstringWithoutRepeatingCharacters {
     fun lengthOfLongestSubstring(s: String): Int {
         if (s.isEmpty()) {
