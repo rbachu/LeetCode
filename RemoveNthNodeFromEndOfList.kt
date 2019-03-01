@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Matthew Lee
+ * Copyright (c) 2019 Matthew Lee
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,53 +23,44 @@
  */
 
 /*
- * https://leetcode.com/problems/add-two-numbers/
+ * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  *
- * You are given two non-empty linked lists representing two non-negative integers.
- * The digits are stored in reverse order and each of their nodes contain a single digit.
- * Add the two numbers and return it as a linked list.
- *
- * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+ * Given a linked list, remove the n-th node from the end of list and return its head.
  *
  * Example:
- * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
- * Output: 7 -> 0 -> 8
- * Explanation: 342 + 465 = 807.
+ * Given linked list: 1 -> 2 -> 3 -> 4 -> 5, and n = 2.
+ * After removing the second node from the end, the linked list becomes 1 -> 2 -> 3 -> 5.
+ *
+ * Note:
+ * Given n will always be valid.
+ *
+ * Follow up:
+ * Could you do this in one pass?
  */
-class AddTwoNumbers {
+class RemoveNthNodeFromEndOfList {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
-        if (l1 == null) {
-            return l2
-        } else if (l2 == null) {
-            return l1
-        }
-
-        val temp = l1.`val` + l2.`val`
-        var carry = temp / 10
-        val head: ListNode? = ListNode(temp % 10)
+    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+        var mark: ListNode? = null
         var node = head
+        var count = -n
 
-        var n1 = l1.next
-        var n2 = l2.next
-
-        while (n1 != null || n2 != null) {
-            val t = (n1?.`val` ?: 0) + (n2?.`val` ?: 0) + carry
-            carry = t / 10
-            node!!.next = ListNode(t % 10)
+        while (node != null) {
             node = node.next
-            n1 = n1?.next
-            n2 = n2?.next
+            count++
+
+            if (count > 0) {
+                mark = if (mark == null) { head } else { mark.next }
+            }
         }
 
-        if (carry > 0) {
-            node!!.next = ListNode(carry)
+        if (mark?.next != null) {
+            mark.next = mark.next?.next
         }
 
-        return head
+        return if (mark == null) { head?.next } else { head }
     }
 }
