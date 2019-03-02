@@ -40,14 +40,13 @@
  * Input: [-10, 9, 20, null, null, 15, 7]
  * Output: 42
  */
-
-// Definition for a binary tree node.
-class TreeNode(var `val`: Int) {
-    var left: TreeNode? = null
-    var right: TreeNode? = null
-}
-
 class BinaryTreeMaximumPathSum {
+    // Definition for a binary tree node.
+    class TreeNode(var `val`: Int) {
+        var left: TreeNode? = null
+        var right: TreeNode? = null
+    }
+
     private var max = Int.MIN_VALUE
 
     fun maxPathSum(root: TreeNode?): Int {
