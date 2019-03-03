@@ -23,76 +23,46 @@
  */
 
 /*
- * Given a singly linked list, determine if it is a palindrome.
+ * https://leetcode.com/problems/remove-linked-list-elements/
  *
- * Example 1:
- * Input: 1 -> 2
- * Output: false
+ * Remove all elements from a linked list of integers that have value val.
  *
- * Example 2:
- * Input: 1 -> 2 -> 2 -> 1
- * Output: true
- *
- * Follow up:
- * Could you do it in O(n) time and O(1) space?
+ * Example:
+ * Input:  1 -> 2 -> 6 -> 3 -> 4 -> 5 -> 6, val = 6
+ * Output: 1 -> 2 -> 3 -> 4 -> 5
  */
 
-class PalindromeLinkedList {
+package linkedlist
+
+class RemoveLinkedListElements {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun isPalindrome(head: ListNode?): Boolean {
-        if (head?.next == null) {
-            return true
-        }
-
-        var revert: ListNode? = ListNode(head.`val`)
-        var copy: ListNode? = revert
-        var node = head.next
-
-        while (node != null) {
-            copy?.next = ListNode(node.`val`)
-            copy = copy?.next
-            node = node.next
-        }
-
-        revert = reverseList(revert)
-        if (revert == null) {
-            return false
-        }
-
-        node = head
-        while (node != null) {
-            if (node.`val` != revert?.`val`) {
-                return false
-            }
-
-            revert = revert.next
-            node = node.next
-        }
-
-        return true
-    }
-
-    private fun reverseList(head: ListNode?): ListNode? {
+    fun removeElements(head: ListNode?, `val`: Int): ListNode? {
         if (head == null) {
             return null
         }
 
-        var before: ListNode? = null
-        var current = head
-        var after: ListNode?
+        var result: ListNode? = null
+        var holder: ListNode? = null
+        var node = head
 
-        while (current != null) {
-            after = current.next
-            current.next = before
-            before = current
-            current = after
+        while (node != null) {
+            if (node.`val` == `val`) {
+                holder?.next = node.next
+            } else {
+                if (result == null) {
+                    result = node
+                }
+
+                holder = node
+            }
+
+            node = node.next
         }
 
-        head.next = null
-        return before
+        return result
     }
 }

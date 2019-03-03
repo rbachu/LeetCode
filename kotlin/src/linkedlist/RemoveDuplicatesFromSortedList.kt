@@ -23,43 +23,47 @@
  */
 
 /*
- * https://leetcode.com/problems/remove-linked-list-elements/
+ * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
  *
- * Remove all elements from a linked list of integers that have value val.
+ * Given a sorted linked list, delete all duplicates such that each element appear only once.
  *
- * Example:
- * Input:  1 -> 2 -> 6 -> 3 -> 4 -> 5 -> 6, val = 6
- * Output: 1 -> 2 -> 3 -> 4 -> 5
+ * Example 1:
+ * Input: 1 -> 1 -> 2
+ * Output: 1 -> 2
+ *
+ * Example 2:
+ * Input: 1 -> 1 -> 2 -> 3 -> 3
+ * Output: 1 -> 2 -> 3
  */
-class RemoveLinkedListElements {
+
+package linkedlist
+
+class RemoveDuplicatesFromSortedList {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun removeElements(head: ListNode?, `val`: Int): ListNode? {
+    fun deleteDuplicates(head: ListNode?): ListNode? {
         if (head == null) {
-            return null
+            return head
         }
 
-        var result: ListNode? = null
-        var holder: ListNode? = null
-        var node = head
+        var holder = head
+        var value = head.`val`
+        var node = head.next
 
         while (node != null) {
-            if (node.`val` == `val`) {
+            if (node.`val` == value) {
                 holder?.next = node.next
             } else {
-                if (result == null) {
-                    result = node
-                }
-
                 holder = node
             }
 
+            value = node.`val`
             node = node.next
         }
 
-        return result
+        return head
     }
 }

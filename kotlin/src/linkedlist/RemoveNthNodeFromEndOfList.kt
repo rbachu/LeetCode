@@ -37,6 +37,9 @@
  * Follow up:
  * Could you do this in one pass?
  */
+
+package linkedlist
+
 class RemoveNthNodeFromEndOfList {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {

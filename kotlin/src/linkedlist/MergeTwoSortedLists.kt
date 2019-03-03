@@ -23,42 +23,65 @@
  */
 
 /*
- * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+ * https://leetcode.com/problems/merge-two-sorted-lists/
  *
- * Given a sorted linked list, delete all duplicates such that each element appear only once.
+ * Merge two sorted linked lists and return it as a new list.
+ * The new list should be made by splicing together the nodes of the first two lists.
  *
- * Example 1:
- * Input: 1 -> 1 -> 2
- * Output: 1 -> 2
- *
- * Example 2:
- * Input: 1 -> 1 -> 2 -> 3 -> 3
- * Output: 1 -> 2 -> 3
+ * Example:
+ * Input: 1 -> 2 -> 4, 1 -> 3 -> 4
+ * Output: 1 -> 1 -> 2 -> 3 -> 4 -> 4
  */
-class RemoveDuplicatesFromSortedList {
+
+package linkedlist
+
+class MergeTwoSortedLists {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun deleteDuplicates(head: ListNode?): ListNode? {
-        if (head == null) {
-            return head
+    fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
+        if (l1 != null && l2 == null) {
+            return l1
+        } else if (l1 == null && l2 != null) {
+            return l2
+        } else if (l1 == null && l2 == null) {
+            return null
         }
 
-        var holder = head
-        var value = head.`val`
-        var node = head.next
+        var n1 = l1
+        var n2 = l2
+        var head: ListNode? = null
+        var node: ListNode? = null
 
-        while (node != null) {
-            if (node.`val` == value) {
-                holder?.next = node.next
+        while (n1 != null && n2 != null) {
+            val current = if (n1.`val` < n2.`val`) {
+                val n = n1
+                n1 = n1.next
+                n
             } else {
-                holder = node
+                val n = n2
+                n2 = n2.next
+                n
             }
 
-            value = node.`val`
-            node = node.next
+            if (node == null) {
+                node = current
+            } else {
+                node.next = current
+                node = node.next
+            }
+
+            if (head == null) {
+                head = current
+            }
+        }
+
+        if (n1 != null) {
+            node?.next = n1
+        } else if (n2 != null) {
+            node?.next = n2
         }
 
         return head

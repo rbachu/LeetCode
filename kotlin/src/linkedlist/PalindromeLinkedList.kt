@@ -23,56 +23,78 @@
  */
 
 /*
- * https://leetcode.com/problems/middle-of-the-linked-list/
- *
- * Given a non-empty, singly linked list with head node head, return a middle node of linked list.
- * If there are two middle nodes, return the second middle node.
+ * Given a singly linked list, determine if it is a palindrome.
  *
  * Example 1:
- * Input: [1, 2, 3, 4, 5]
- * Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3.
- *         (The judge's serialization of this node is [3,4,5]).
- *         Note that we returned a ListNode object ans, such that:
- *         ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.
+ * Input: 1 -> 2
+ * Output: false
  *
  * Example 2:
- * Input: [1, 2, 3, 4, 5, 6]
- * Output: Node 4 from this list (Serialization: [4,5,6])
- *         Since the list has two middle nodes with values 3 and 4, we return the second one.
+ * Input: 1 -> 2 -> 2 -> 1
+ * Output: true
+ *
+ * Follow up:
+ * Could you do it in O(n) time and O(1) space?
  */
-class MiddleOfTheLinkedList {
+
+package linkedlist
+
+class PalindromeLinkedList {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun middleNode(head: ListNode?): ListNode? {
+    fun isPalindrome(head: ListNode?): Boolean {
+        if (head?.next == null) {
+            return true
+        }
+
+        var revert: ListNode? = ListNode(head.`val`)
+        var copy: ListNode? = revert
+        var node = head.next
+
+        while (node != null) {
+            copy?.next = ListNode(node.`val`)
+            copy = copy?.next
+            node = node.next
+        }
+
+        revert = reverseList(revert)
+        if (revert == null) {
+            return false
+        }
+
+        node = head
+        while (node != null) {
+            if (node.`val` != revert?.`val`) {
+                return false
+            }
+
+            revert = revert.next
+            node = node.next
+        }
+
+        return true
+    }
+
+    private fun reverseList(head: ListNode?): ListNode? {
         if (head == null) {
             return null
         }
 
-        var middle = head
-        var node = head
-        var size = 1
+        var before: ListNode? = null
+        var current = head
+        var after: ListNode?
 
-        while (node != null) {
-            middle = if (middle!!.next != null) {
-                size++
-                middle.next
-            } else {
-                break
-            }
-
-            middle = if (middle!!.next != null) {
-                size++
-                middle.next
-            } else {
-                break
-            }
-
-            node = node.next
+        while (current != null) {
+            after = current.next
+            current.next = before
+            before = current
+            current = after
         }
 
-        return if (size % 2 == 0) { node?.next } else { node }
+        head.next = null
+        return before
     }
 }

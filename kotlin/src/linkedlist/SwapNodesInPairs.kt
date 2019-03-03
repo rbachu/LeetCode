@@ -23,41 +23,59 @@
  */
 
 /*
- * https://leetcode.com/problems/reverse-linked-list/
+ * https://leetcode.com/problems/swap-nodes-in-pairs/
  *
- * Reverse a singly linked list.
+ * Given a linked list, swap every two adjacent nodes and return its head.
+ * You may not modify the values in the list's nodes, only nodes itself may be changed.
  *
  * Example:
- * Input: 1 -> 2 -> 3 -> 4 -> 5 -> NULL
- * Output: 5 -> 4 -> 3 -> 2 -> 1 -> NULL
- *
- * Follow up:
- * A linked list can be reversed either iteratively or recursively.
- * Could you implement both?
+ * Given 1 -> 2 -> 3 -> 4, you should return the list as 2 -> 1 -> 4 -> 3.
  */
-class ReverseLinkedList {
+
+package linkedlist
+
+class SwapNodesInPairs {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun reverseList(head: ListNode?): ListNode? {
-        if (head == null) {
-            return null
+    fun swapPairs(head: ListNode?): ListNode? {
+        if (head?.next == null) {
+            return head
         }
 
-        var before: ListNode? = null
-        var current = head
-        var after: ListNode?
+        var result: ListNode? = null
+        var holder: ListNode? = null
+        var node = head
+        var count = 0
 
-        while (current != null) {
-            after = current.next
-            current.next = before
-            before = current
-            current = after
+        while (true) {
+            if (node == null) {
+                break
+            }
+
+            if (count % 2 == 0) {
+                val i = node.next
+                if (i != null) {
+                    val j = i.next
+                    i.next = node
+                    node.next = j
+                    node = i
+                    holder?.next = node
+                }
+            } else {
+                holder = node
+            }
+
+            if (result == null) {
+                result = node
+            }
+
+            node = node.next
+            count++
         }
 
-        head.next = null
-        return before
+        return result
     }
 }

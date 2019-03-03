@@ -23,56 +23,59 @@
  */
 
 /*
- * https://leetcode.com/problems/swap-nodes-in-pairs/
+ * https://leetcode.com/problems/middle-of-the-linked-list/
  *
- * Given a linked list, swap every two adjacent nodes and return its head.
- * You may not modify the values in the list's nodes, only nodes itself may be changed.
+ * Given a non-empty, singly linked list with head node head, return a middle node of linked list.
+ * If there are two middle nodes, return the second middle node.
  *
- * Example:
- * Given 1 -> 2 -> 3 -> 4, you should return the list as 2 -> 1 -> 4 -> 3.
+ * Example 1:
+ * Input: [1, 2, 3, 4, 5]
+ * Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3.
+ *         (The judge's serialization of this node is [3,4,5]).
+ *         Note that we returned a ListNode object ans, such that:
+ *         ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.
+ *
+ * Example 2:
+ * Input: [1, 2, 3, 4, 5, 6]
+ * Output: Node 4 from this list (Serialization: [4,5,6])
+ *         Since the list has two middle nodes with values 3 and 4, we return the second one.
  */
-class SwapNodesInPairs {
+
+package linkedlist
+
+class MiddleOfTheLinkedList {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {
         var next: ListNode? = null
     }
 
-    fun swapPairs(head: ListNode?): ListNode? {
-        if (head?.next == null) {
-            return head
+    fun middleNode(head: ListNode?): ListNode? {
+        if (head == null) {
+            return null
         }
 
-        var result: ListNode? = null
-        var holder: ListNode? = null
+        var middle = head
         var node = head
-        var count = 0
+        var size = 1
 
-        while (true) {
-            if (node == null) {
+        while (node != null) {
+            middle = if (middle!!.next != null) {
+                size++
+                middle.next
+            } else {
                 break
             }
 
-            if (count % 2 == 0) {
-                val i = node.next
-                if (i != null) {
-                    val j = i.next
-                    i.next = node
-                    node.next = j
-                    node = i
-                    holder?.next = node
-                }
+            middle = if (middle!!.next != null) {
+                size++
+                middle.next
             } else {
-                holder = node
-            }
-
-            if (result == null) {
-                result = node
+                break
             }
 
             node = node.next
-            count++
         }
 
-        return result
+        return if (size % 2 == 0) { node?.next } else { node }
     }
 }
