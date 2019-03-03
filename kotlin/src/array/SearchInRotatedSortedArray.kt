@@ -40,6 +40,9 @@
  * Input: nums = [4, 5, 6, 7, 0, 1, 2], target = 3
  * Output: -1
  */
+
+package array
+
 class SearchInRotatedSortedArray {
     fun search(nums: IntArray, target: Int): Int {
         if (nums.isEmpty()) {
