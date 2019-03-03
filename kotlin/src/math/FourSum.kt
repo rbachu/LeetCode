@@ -42,7 +42,7 @@
  * ]
  */
 
-package others
+package math
 
 class FourSum {
 

@@ -23,7 +23,7 @@
  */
 
 /*
- * https://leetcode.com/problems/integer-to-roman/
+ * https://leetcode.com/problems/roman-to-integer/
  *
  * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
  *
@@ -51,126 +51,64 @@
  * 2. X can be placed before L (50) and C (100) to make 40 and 90.
  * 3. C can be placed before D (500) and M (1000) to make 400 and 900.
  *
- * Given an integer, convert it to a roman numeral.
+ * Given a roman numeral, convert it to an integer.
  * Input is guaranteed to be within the range from 1 to 3999.
  *
  * Example 1:
- * Input: 3
- * Output: "III"
+ * Input: "III"
+ * Output: 3
  *
  * Example 2:
- * Input: 4
- * Output: "IV"
+ * Input: "IV"
+ * Output: 4
  *
  * Example 3:
- * Input: 9
- * Output: "IX"
+ * Input: "IX"
+ * Output: 9
  *
  * Example 4:
- * Input: 58
- * Output: "LVIII"
+ * Input: "LVIII"
+ * Output: 58
  * Explanation: L = 50, V = 5, III = 3.
  *
  * Example 5:
- * Input: 1994
- * Output: "MCMXCIV"
+ * Input: "MCMXCIV"
+ * Output: 1994
  * Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 
-package others
+package math
 
-class IntegerToRoman {
-    private fun roman(num: Int): String {
-        return when(num) {
-            1    -> "I"
-            4    -> "IV"
-            5    -> "V"
-            9    -> "IX"
-            10   -> "X"
-            40   -> "XL"
-            50   -> "L"
-            90   -> "XC"
-            100  -> "C"
-            400  -> "CD"
-            500  -> "D"
-            900  -> "CM"
-            1000 -> "M"
-            else -> ""
+class RomanToInteger {
+    private fun integer(c: Char): Int {
+        return when(c) {
+            'I'  -> 1
+            'V'  -> 5
+            'X'  -> 10
+            'L'  -> 50
+            'C'  -> 100
+            'D'  -> 500
+            'M'  -> 1000
+            else -> 0
         }
     }
 
-    fun intToRoman(num: Int): String {
-        var input = num
-        var roman = roman(input)
-        if (roman.isNotEmpty()) {
-            return roman
+    fun romanToInt(s: String): Int {
+        var integer = 0
+        var latest = 0
+
+        for (i in s.lastIndex downTo 0) {
+            val temp = integer(s[i])
+
+            if (temp >= latest) {
+                integer += temp
+            } else {
+                integer -= temp
+            }
+
+            latest = temp
         }
 
-        while (input - 1000 >= 0) {
-            input -= 1000
-            roman += roman(1000)
-        }
-
-        if (input - 900 >= 0) {
-            input -= 900
-            roman += roman(900)
-        }
-
-        if (input - 500 >= 0) {
-            input -= 500
-            roman += roman(500)
-        }
-
-        if (input - 400 >= 0) {
-            input -= 400
-            roman += roman(400)
-        }
-
-        while (input - 100 >= 0) {
-            input -= 100
-            roman += roman(100)
-        }
-
-        if (input - 90 >= 0) {
-            input -= 90
-            roman += roman(90)
-        }
-
-        if (input - 50 >= 0) {
-            input -= 50
-            roman += roman(50)
-        }
-
-        if (input - 40 >= 0) {
-            input -= 40
-            roman += roman(40)
-        }
-
-        while (input - 10 >= 0) {
-            input -= 10
-            roman += roman(10)
-        }
-
-        if (input - 9 >= 0) {
-            input -= 9
-            roman += roman(9)
-        }
-
-        if (input - 5 >= 0) {
-            input -= 5
-            roman += roman(5)
-        }
-
-        if (input - 4 >= 0) {
-            input -= 4
-            roman += roman(4)
-        }
-
-        while (input - 1 >= 0) {
-            input -= 1
-            roman += roman(1)
-        }
-
-        return roman
+        return integer
     }
 }

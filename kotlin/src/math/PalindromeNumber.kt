@@ -43,7 +43,7 @@
  * Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  */
 
-package others
+package math
 
 class PalindromeNumber {
     fun isPalindrome(input: Int): Boolean {

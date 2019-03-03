@@ -23,44 +23,51 @@
  */
 
 /*
- * https://leetcode.com/problems/container-with-most-water/
+ * https://leetcode.com/problems/reverse-integer/
  *
- * Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).
- * n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
- * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+ * Given a 32-bit signed integer, reverse digits of an integer.
+ *
+ * Example 1:
+ * Input: 123
+ * Output: 321
+ *
+ * Example 2:
+ * Input: -123
+ * Output: -321
+ *
+ * Example 3:
+ * Input: 120
+ * Output: 21
  *
  * Note:
- * You may not slant the container and n is at least 2.
- *
- * Example:
- * Input: [1, 8, 6, 2, 5, 4, 8, 3, 7]
- * Output: 49
+ * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1].
+ * For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
  */
 
-package others
+package math
 
-class ContainerWithMostWater {
-    fun maxArea(height: IntArray): Int {
-        var leftIndex = 0
-        var rightIndex = height.lastIndex
-        var maxArea = 0
-
-        while (leftIndex < rightIndex) {
-            val leftHeight = height[leftIndex]
-            val rightHeight = height[rightIndex]
-
-            val area = Math.abs(leftIndex - rightIndex) * Math.min(leftHeight, rightHeight)
-            if (maxArea < area) {
-                maxArea = area
-            }
-
-            if (leftHeight < rightHeight) {
-                leftIndex++
-            } else {
-                rightIndex--
-            }
+class ReverseInteger {
+    fun reverse(input: Int): Int {
+        var x = Math.abs(input.toLong())
+        if (x > Int.MAX_VALUE) {
+            return 0
         }
 
-        return maxArea
+        var result = 0L
+        val isNeg = input < 0
+
+        while (x / 10L != 0L) {
+            result = result * 10L + x % 10L
+            x /= 10L
+        }
+
+        result = result * 10L + x
+        return if (result > Integer.MAX_VALUE) { 0 } else {
+            if (isNeg) {
+                result = -result
+            }
+
+            result.toInt()
+        }
     }
 }

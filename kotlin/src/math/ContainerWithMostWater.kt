@@ -23,35 +23,44 @@
  */
 
 /*
- * https://leetcode.com/problems/two-sum/
+ * https://leetcode.com/problems/container-with-most-water/
  *
- * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
- * You may assume that each input would have exactly one solution, and you may not use the same element twice.
+ * Given n non-negative integers a1, a2, ..., an , where each represents a point at coordinate (i, ai).
+ * n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0).
+ * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+ *
+ * Note:
+ * You may not slant the container and n is at least 2.
  *
  * Example:
- * Given nums = [2, 7, 11, 15], target = 9,
- * Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
+ * Input: [1, 8, 6, 2, 5, 4, 8, 3, 7]
+ * Output: 49
  */
 
-package others
+package math
 
-class TwoSum() {
-    fun twoSum(nums: IntArray, target: Int): IntArray {
-        val result = IntArray(2)
-        val map = hashMapOf<Int, Int>()
+class ContainerWithMostWater {
+    fun maxArea(height: IntArray): Int {
+        var leftIndex = 0
+        var rightIndex = height.lastIndex
+        var maxArea = 0
 
-        for (i in nums.indices) {
-            val key = target - nums[i]
+        while (leftIndex < rightIndex) {
+            val leftHeight = height[leftIndex]
+            val rightHeight = height[rightIndex]
 
-            if (map.containsKey(key)) {
-                result[0] = map.getOrDefault(key, 0)
-                result[1] = i
-                return result
+            val area = Math.abs(leftIndex - rightIndex) * Math.min(leftHeight, rightHeight)
+            if (maxArea < area) {
+                maxArea = area
             }
 
-            map[nums[i]] = i
+            if (leftHeight < rightHeight) {
+                leftIndex++
+            } else {
+                rightIndex--
+            }
         }
 
-        return result
+        return maxArea
     }
 }

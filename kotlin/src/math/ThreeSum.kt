@@ -40,7 +40,7 @@
  * ]
  */
 
-package others
+package math
 
 class ThreeSum {
     fun threeSum(nums: IntArray): List<List<Int>> {
