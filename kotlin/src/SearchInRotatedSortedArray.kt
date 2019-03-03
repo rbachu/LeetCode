@@ -73,7 +73,3 @@ class SearchInRotatedSortedArray {
         return -1
     }
 }
-
-fun main() {
-    println(SearchInRotatedSortedArray().search(intArrayOf(7, 9, 1, 4, 6), 5))
-}
