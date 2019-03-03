@@ -52,7 +52,7 @@
  *     P     I
  */
 
-package others
+package other
 
 class ZigZagConversion {
     fun convert(s: String, numRows: Int): String {
