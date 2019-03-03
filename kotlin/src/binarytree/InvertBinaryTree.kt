@@ -23,48 +23,45 @@
  */
 
 /*
- * https://leetcode.com/problems/binary-tree-inorder-traversal/
+ * https://leetcode.com/problems/invert-binary-tree/
  *
- * Given a binary tree, return the inorder traversal of its nodes' values.
+ * Invert a binary tree.
  *
  * Example:
- * Input:  [1, null, 2, 3]
- *         1
- *          \
- *           2
- *          /
- *         3
- * Output: [1, 3, 2]
+ * Input:
+ *              4
+ *            /   \
+ *           2     7
+ *          / \   / \
+ *         1   3 6   9
+ * Output:
+ *              4
+ *            /   \
+ *           7     2
+ *          / \   / \
+ *         9   6 3   1
  *
- * Follow up:
- * Recursive solution is trivial, could you do it iteratively?
+ * Trivia:
+ * This problem was inspired by this original tweet by Max Howell:
+ * > Google: 90% of our engineers use the software you wrote (Homebrew),
+ * > but you can’t invert a binary tree on a whiteboard so f*** off.
  */
 
 package binarytree
 
-import java.util.*
-
-class BinaryTreeInorderTraversal {
-    fun inorderTraversal(root: TreeNode?): List<Int> {
+class InvertBinaryTree {
+    fun invertTree(root: TreeNode?): TreeNode? {
         if (root == null) {
-            return listOf()
+            return null
         }
 
-        val list = mutableListOf<Int>()
-        val stack = Stack<TreeNode>()
+        root.left = invertTree(root.left)
+        root.right = invertTree(root.right)
 
-        var node = root
-        while (node != null || stack.isNotEmpty()) {
-            node = node?.let {
-                stack.push(it)
-                it.left
-            } ?: run {
-                val n = stack.pop()
-                list.add(n.`val`)
-                n.right
-            }
-        }
+        val temp = root.left
+        root.left = root.right
+        root.right = temp
 
-        return list
+        return root
     }
 }
