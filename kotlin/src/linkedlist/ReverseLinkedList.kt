@@ -39,11 +39,6 @@
 package linkedlist
 
 class ReverseLinkedList {
-    // Definition for singly-linked list.
-    class ListNode(var `val`: Int = 0) {
-        var next: ListNode? = null
-    }
-
     fun reverseList(head: ListNode?): ListNode? {
         if (head == null) {
             return null

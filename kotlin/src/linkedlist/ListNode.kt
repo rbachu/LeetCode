@@ -22,43 +22,9 @@
  * THE SOFTWARE.
  */
 
-/*
- * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
- *
- * Given a sorted linked list, delete all duplicates such that each element appear only once.
- *
- * Example 1:
- * Input: 1 -> 1 -> 2
- * Output: 1 -> 2
- *
- * Example 2:
- * Input: 1 -> 1 -> 2 -> 3 -> 3
- * Output: 1 -> 2 -> 3
- */
-
 package linkedlist
 
-class RemoveDuplicatesFromSortedList {
-    fun deleteDuplicates(head: ListNode?): ListNode? {
-        if (head == null) {
-            return head
-        }
-
-        var holder = head
-        var value = head.`val`
-        var node = head.next
-
-        while (node != null) {
-            if (node.`val` == value) {
-                holder?.next = node.next
-            } else {
-                holder = node
-            }
-
-            value = node.`val`
-            node = node.next
-        }
-
-        return head
-    }
+// Definition for singly-linked list
+class ListNode(var `val`: Int = 0) {
+    var next: ListNode? = null
 }

@@ -35,11 +35,6 @@
 package linkedlist
 
 class SwapNodesInPairs {
-    // Definition for singly-linked list.
-    class ListNode(var `val`: Int = 0) {
-        var next: ListNode? = null
-    }
-
     fun swapPairs(head: ListNode?): ListNode? {
         if (head?.next == null) {
             return head

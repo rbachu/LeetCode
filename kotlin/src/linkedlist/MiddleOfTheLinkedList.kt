@@ -44,11 +44,6 @@
 package linkedlist
 
 class MiddleOfTheLinkedList {
-    // Definition for singly-linked list.
-    class ListNode(var `val`: Int = 0) {
-        var next: ListNode? = null
-    }
-
     fun middleNode(head: ListNode?): ListNode? {
         if (head == null) {
             return null

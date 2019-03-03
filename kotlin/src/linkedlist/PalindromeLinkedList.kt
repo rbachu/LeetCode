@@ -40,11 +40,6 @@
 package linkedlist
 
 class PalindromeLinkedList {
-    // Definition for singly-linked list.
-    class ListNode(var `val`: Int = 0) {
-        var next: ListNode? = null
-    }
-
     fun isPalindrome(head: ListNode?): Boolean {
         if (head?.next == null) {
             return true

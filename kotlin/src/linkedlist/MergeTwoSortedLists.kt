@@ -36,11 +36,6 @@
 package linkedlist
 
 class MergeTwoSortedLists {
-    // Definition for singly-linked list.
-    class ListNode(var `val`: Int = 0) {
-        var next: ListNode? = null
-    }
-
     fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
         if (l1 != null && l2 == null) {
             return l1
