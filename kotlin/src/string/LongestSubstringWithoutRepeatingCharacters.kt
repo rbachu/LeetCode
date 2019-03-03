@@ -45,6 +45,8 @@
  *              "pwke" is a subsequence and not a substring.
  */
 
+package string
+
 import java.util.*
 
 class LongestSubstringWithoutRepeatingCharacters {

@@ -41,6 +41,7 @@
  *     [-2,  0, 0, 2]
  * ]
  */
+
 class FourSum {
 
     data class Four(val first: Int, val second: Int, val third: Int, val forth: Int)

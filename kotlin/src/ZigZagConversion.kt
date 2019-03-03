@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Matthew Lee
+ * Copyright (c) 2019 Matthew Lee
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -51,6 +51,7 @@
  *     Y A   H R
  *     P     I
  */
+
 class ZigZagConversion {
     fun convert(s: String, numRows: Int): String {
         if (s.isEmpty() || numRows <= 1) {

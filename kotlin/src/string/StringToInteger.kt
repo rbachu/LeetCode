@@ -72,6 +72,9 @@
  * Explanation: The number "-91283472332" is out of the range of a 32-bit signed integer.
  *              Therefore INT_MIN (−2^31) is returned.
  */
+
+package string
+
 class StringToInteger {
     fun myAtoi(str: String?): Int {
         if (str == null || str.isEmpty() || str.isBlank()) {

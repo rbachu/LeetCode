@@ -23,21 +23,51 @@
  */
 
 /*
- * https://leetcode.com/problems/kth-largest-element-in-an-array/
+ * https://leetcode.com/problems/longest-common-prefix/
  *
- * Find the **k**th largest element in an unsorted array.
- * Note that it is the kth largest element in the sorted order, not the kth distinct element.
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ * If there is no common prefix, return an empty string "".
  *
  * Example 1:
- * Input: [3, 2, 1, 5, 6, 4] and k = 2
- * Output: 5
+ * Input: ["flower","flow","flight"]
+ * Output: "fl"
  *
- * Input: [3, 2, 3, 1, 2, 4, 5, 5, 6] and k = 4
- * Output: 4
+ * Example 2:
+ * Input: ["dog","racecar","car"]
+ * Output: ""
+ * Explanation: There is no common prefix among the input strings.
  *
  * Note:
- * You may assume k is always valid, 1 ≤ k ≤ array's length.
+ * All given inputs are in lowercase letters a-z.
  */
-class KthLargestElementInAnArray {
-    fun findKthLargest(nums: IntArray, k: Int): Int = nums.sortedArrayDescending()[k - 1]
+
+package string
+
+class LongestCommonPrefix {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        if (strs.isEmpty()) {
+            return ""
+        } else if (strs.size == 1) {
+            return strs[0]
+        }
+
+        var prefix = ""
+        var index = 0
+
+        while (true) {
+            if (strs[0].lastIndex < index) {
+                return prefix
+            }
+
+            val c = strs[0][index]
+            for (i in 1 until strs.size) {
+                if (strs[i].lastIndex < index || strs[i][index] != c) {
+                    return prefix
+                }
+            }
+
+            prefix += c
+            index++
+        }
+    }
 }

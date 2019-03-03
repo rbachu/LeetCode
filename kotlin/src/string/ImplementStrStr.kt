@@ -41,6 +41,9 @@
  * For the purpose of this problem, we will return 0 when needle is an empty string.
  * This is consistent to C's strstr() and Java's indexOf().
  */
+
+package string
+
 class ImplementStrStr {
     fun strStr(haystack: String, needle: String): Int {
         if (needle.isEmpty()) {

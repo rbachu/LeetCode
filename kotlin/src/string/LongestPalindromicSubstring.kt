@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2019 Matthew Lee
+ * Copyright (c) 2018 Matthew Lee
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,48 +23,60 @@
  */
 
 /*
- * https://leetcode.com/problems/longest-common-prefix/
+ * https://leetcode.com/problems/longest-palindromic-substring/
  *
- * Write a function to find the longest common prefix string amongst an array of strings.
- * If there is no common prefix, return an empty string "".
+ * Given a string s, find the longest palindromic substring in s.
+ * You may assume that the maximum length of s is 1000.
  *
  * Example 1:
- * Input: ["flower","flow","flight"]
- * Output: "fl"
+ * Input: "babad"
+ * Output: "bab"
+ * Note: "aba" is also a valid answer.
  *
  * Example 2:
- * Input: ["dog","racecar","car"]
- * Output: ""
- * Explanation: There is no common prefix among the input strings.
- *
- * Note:
- * All given inputs are in lowercase letters a-z.
+ * Input: "cbbd"
+ * Output: "bb"
  */
-class LongestCommonPrefix {
-    fun longestCommonPrefix(strs: Array<String>): String {
-        if (strs.isEmpty()) {
+
+package string
+
+class LongestPalindromicSubstring {
+    fun longestPalindrome(s: String): String {
+        if (s.isEmpty()) {
             return ""
-        } else if (strs.size == 1) {
-            return strs[0]
         }
 
-        var prefix = ""
-        var index = 0
+        var start = 0
+        var window = s.length
 
-        while (true) {
-            if (strs[0].lastIndex < index) {
-                return prefix
+        while (!isPalindromicString(s, start, start + window)) {
+            if (start + window == s.length) {
+                start = 0
+                window--
+            } else {
+                start++
             }
 
-            val c = strs[0][index]
-            for (i in 1 until strs.size) {
-                if (strs[i].lastIndex < index || strs[i][index] != c) {
-                    return prefix
-                }
+            if (start > s.lastIndex || window < 0) {
+                return ""
             }
-
-            prefix += c
-            index++
         }
+
+        return s.substring(start, start + window)
+    }
+
+    private fun isPalindromicString(s: String, from: Int, to: Int): Boolean {
+        var start = from
+        var end = to - 1
+
+        while (s[start] == s[end]) {
+            start++
+            end--
+            if (start > s.lastIndex || end < 0) {
+                break
+            }
+        }
+
+        return start >= end
     }
 }

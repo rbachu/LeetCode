@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Matthew Lee
+ * Copyright (c) 2019 Matthew Lee
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -32,6 +32,7 @@
  * Given nums = [2, 7, 11, 15], target = 9,
  * Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
  */
+
 class TwoSum() {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val result = IntArray(2)

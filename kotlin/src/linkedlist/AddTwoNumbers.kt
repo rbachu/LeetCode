@@ -36,6 +36,9 @@
  * Output: 7 -> 0 -> 8
  * Explanation: 342 + 465 = 807.
  */
+
+package linkedlist
+
 class AddTwoNumbers {
     // Definition for singly-linked list.
     class ListNode(var `val`: Int = 0) {

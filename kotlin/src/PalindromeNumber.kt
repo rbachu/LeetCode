@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Matthew Lee
+ * Copyright (c) 2019 Matthew Lee
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -42,6 +42,7 @@
  * Output: false
  * Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  */
+
 class PalindromeNumber {
     fun isPalindrome(input: Int): Boolean {
         var x = input
