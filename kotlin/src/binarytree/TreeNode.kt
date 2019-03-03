@@ -22,49 +22,10 @@
  * THE SOFTWARE.
  */
 
-/*
- * https://leetcode.com/problems/binary-tree-inorder-traversal/
- *
- * Given a binary tree, return the inorder traversal of its nodes' values.
- *
- * Example:
- * Input: [1, null, 2, 3]
- * 1
- *  \
- *   2
- *  /
- * 3
- * Output: [1, 3, 2]
- *
- * Follow up:
- * Recursive solution is trivial, could you do it iteratively?
- */
-
 package binarytree
 
-import java.util.*
-
-class BinaryTreeInorderTraversal {
-    fun inorderTraversal(root: TreeNode?): List<Int> {
-        if (root == null) {
-            return listOf()
-        }
-
-        val list = mutableListOf<Int>()
-        val stack = Stack<TreeNode>()
-
-        var node = root
-        while (node != null || stack.isNotEmpty()) {
-            node = node?.let {
-                stack.push(it)
-                it.left
-            } ?: run {
-                val n = stack.pop()
-                list.add(n.`val`)
-                n.right
-            }
-        }
-
-        return list
-    }
+// Definition for a binary tree node
+class TreeNode(var `val`: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
 }

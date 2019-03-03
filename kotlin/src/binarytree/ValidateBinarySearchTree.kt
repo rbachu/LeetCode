@@ -54,12 +54,6 @@
 package binarytree
 
 class ValidateBinarySearchTree {
-    // Definition for a binary tree node.
-    class TreeNode(var `val`: Int) {
-        var left: TreeNode? = null
-        var right: TreeNode? = null
-    }
-
     fun isValidBST(root: TreeNode?): Boolean {
         val list = mutableListOf<Int>()
         inorder(root, list)
