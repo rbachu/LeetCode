@@ -23,38 +23,51 @@
  */
 
 /*
- * https://leetcode.com/problems/3sum-closest/
+ * https://leetcode.com/problems/reverse-integer/
  *
- * Given an array nums of n integers and an integer target,
- * find three integers in nums such that the sum is closest to target.
- * Return the sum of the three integers.
- * You may assume that each input would have exactly one solution.
+ * Given a 32-bit signed integer, reverse digits of an integer.
  *
- * Example:
- * Given array nums = [-1, 2, 1, -4], and target = 1.
- * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+ * Example 1:
+ * Input: 123
+ * Output: 321
+ *
+ * Example 2:
+ * Input: -123
+ * Output: -321
+ *
+ * Example 3:
+ * Input: 120
+ * Output: 21
+ *
+ * Note:
+ * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1].
+ * For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
  */
 
-class ThreeSumClosest {
-    fun threeSumClosest(nums: IntArray, target: Int): Int {
-        nums.sort()
+package others
 
-        var closest = nums[nums.lastIndex] + nums[nums.lastIndex - 1] + nums[nums.lastIndex - 2]
-
-        for (i in 0 until nums.size - 2) {
-            var start = i + 1
-            var end = nums.lastIndex
-
-            while (start < end) {
-                val sum = nums[i] + nums[start] + nums[end]
-                when {
-                    Math.abs(sum - target) < Math.abs(closest - target) -> closest = sum
-                    sum < target -> start++
-                    else -> end--
-                }
-            }
+class ReverseInteger {
+    fun reverse(input: Int): Int {
+        var x = Math.abs(input.toLong())
+        if (x > Int.MAX_VALUE) {
+            return 0
         }
 
-        return closest
+        var result = 0L
+        val isNeg = input < 0
+
+        while (x / 10L != 0L) {
+            result = result * 10L + x % 10L
+            x /= 10L
+        }
+
+        result = result * 10L + x
+        return if (result > Integer.MAX_VALUE) { 0 } else {
+            if (isNeg) {
+                result = -result
+            }
+
+            result.toInt()
+        }
     }
 }

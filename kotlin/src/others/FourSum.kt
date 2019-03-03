@@ -42,6 +42,8 @@
  * ]
  */
 
+package others
+
 class FourSum {
 
     data class Four(val first: Int, val second: Int, val third: Int, val forth: Int)

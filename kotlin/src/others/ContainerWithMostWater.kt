@@ -37,6 +37,8 @@
  * Output: 49
  */
 
+package others
+
 class ContainerWithMostWater {
     fun maxArea(height: IntArray): Int {
         var leftIndex = 0

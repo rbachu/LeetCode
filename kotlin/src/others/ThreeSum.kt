@@ -40,6 +40,8 @@
  * ]
  */
 
+package others
+
 class ThreeSum {
     fun threeSum(nums: IntArray): List<List<Int>> {
         val set = mutableSetOf<Triple<Int, Int, Int>>()

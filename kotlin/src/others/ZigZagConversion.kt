@@ -52,6 +52,8 @@
  *     P     I
  */
 
+package others
+
 class ZigZagConversion {
     fun convert(s: String, numRows: Int): String {
         if (s.isEmpty() || numRows <= 1) {

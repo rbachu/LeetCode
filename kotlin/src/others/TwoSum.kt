@@ -23,49 +23,35 @@
  */
 
 /*
- * https://leetcode.com/problems/reverse-integer/
+ * https://leetcode.com/problems/two-sum/
  *
- * Given a 32-bit signed integer, reverse digits of an integer.
+ * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+ * You may assume that each input would have exactly one solution, and you may not use the same element twice.
  *
- * Example 1:
- * Input: 123
- * Output: 321
- *
- * Example 2:
- * Input: -123
- * Output: -321
- *
- * Example 3:
- * Input: 120
- * Output: 21
- *
- * Note:
- * Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−2^31,  2^31 − 1].
- * For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
+ * Example:
+ * Given nums = [2, 7, 11, 15], target = 9,
+ * Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
  */
 
-class ReverseInteger {
-    fun reverse(input: Int): Int {
-        var x = Math.abs(input.toLong())
-        if (x > Int.MAX_VALUE) {
-            return 0
-        }
+package others
 
-        var result = 0L
-        val isNeg = input < 0
+class TwoSum() {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val result = IntArray(2)
+        val map = hashMapOf<Int, Int>()
 
-        while (x / 10L != 0L) {
-            result = result * 10L + x % 10L
-            x /= 10L
-        }
+        for (i in nums.indices) {
+            val key = target - nums[i]
 
-        result = result * 10L + x
-        return if (result > Integer.MAX_VALUE) { 0 } else {
-            if (isNeg) {
-                result = -result
+            if (map.containsKey(key)) {
+                result[0] = map.getOrDefault(key, 0)
+                result[1] = i
+                return result
             }
 
-            result.toInt()
+            map[nums[i]] = i
         }
+
+        return result
     }
 }
