@@ -40,6 +40,8 @@
  * Recursive solution is trivial, could you do it iteratively?
  */
 
+package binarytree
+
 import java.util.*
 
 class BinaryTreeInorderTraversal {

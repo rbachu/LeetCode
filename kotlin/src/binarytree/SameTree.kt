@@ -23,58 +23,57 @@
  */
 
 /*
- * https://leetcode.com/problems/validate-binary-search-tree/
+ * https://leetcode.com/problems/same-tree/
  *
- * Given a binary tree, determine if it is a valid binary search tree (BST).
- *
- * Assume a BST is defined as follows:
- * 1. The left subtree of a node contains only nodes with keys less than the node's key.
- * 2. The right subtree of a node contains only nodes with keys greater than the node's key.
- * 3. Both the left and right subtrees must also be binary search trees.
+ * Given two binary trees, write a function to check if they are the same or not.
+ * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
  *
  * Example 1:
- * Input:
- *   2
- *  / \
- * 1   3
+ * Input:     1         1
+ *           / \       / \
+ *          2   3     2   3
+ *        [1, 2, 3] [1, 2, 3]
  * Output: true
  *
  * Example 2:
- * Input:
- *     5
- *    / \
- *   1   4
- *  / \
- * 3   6
+ * Input:     1         1
+ *           /           \
+ *          2             2
+ *        [1, 2] [1, null, 2]
  * Output: false
- * Explanation: The input is: [5, 1, 4, null, null, 3, 6].
- *              The root node's value is 5 but its right child's value is 4.
+ *
+ * Example 3:
+ * Input:     1         1
+ *           / \       / \
+ *          2   1     1   2
+ *        [1, 2, 1] [1, 1, 2]
+ * Output: false
  */
-class ValidateBinarySearchTree {
+
+package binarytree
+
+class SameTree {
     // Definition for a binary tree node.
     class TreeNode(var `val`: Int) {
         var left: TreeNode? = null
         var right: TreeNode? = null
     }
 
-    fun isValidBST(root: TreeNode?): Boolean {
-        val list = mutableListOf<Int>()
-        inorder(root, list)
-
-        for (i in 0 until list.size - 1) {
-            if (list[i] > list[i + 1]) {
-                return false
-            }
+    fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
+        if (p == null && q == null) {
+            return true
+        } else if (p == null && q != null) {
+            return false
+        } else if (p != null && q == null) {
+            return false
         }
 
-        return true
-    }
-
-    fun inorder(node: TreeNode?, list: MutableList<Int>) {
-        node?.let {
-            inorder(it.left, list)
-            list.add(it.`val`)
-            inorder(it.right, list)
+        return if (p!!.`val` != q!!.`val`) {
+            false
+        } else {
+            val left = isSameTree(p.left, q.left)
+            val right = isSameTree(p.right, q.right)
+            left && right
         }
     }
 }

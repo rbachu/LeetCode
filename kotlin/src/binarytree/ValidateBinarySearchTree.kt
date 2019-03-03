@@ -23,58 +23,61 @@
  */
 
 /*
- * https://leetcode.com/problems/binary-tree-maximum-path-sum/
+ * https://leetcode.com/problems/validate-binary-search-tree/
  *
- * Given a **non-empty** binary tree, find the maximum path sum.
+ * Given a binary tree, determine if it is a valid binary search tree (BST).
  *
- * For this problem, a path is defined as any sequence of nodes
- * from some starting node to any node in the tree along the parent-child connections.
- *
- * The path must contain **at least one node** and does not need to go through the root.
+ * Assume a BST is defined as follows:
+ * 1. The left subtree of a node contains only nodes with keys less than the node's key.
+ * 2. The right subtree of a node contains only nodes with keys greater than the node's key.
+ * 3. Both the left and right subtrees must also be binary search trees.
  *
  * Example 1:
- * Input: [1, 2, 3]
- * Output: 6
+ * Input:
+ *   2
+ *  / \
+ * 1   3
+ * Output: true
  *
  * Example 2:
- * Input: [-10, 9, 20, null, null, 15, 7]
- * Output: 42
+ * Input:
+ *     5
+ *    / \
+ *   1   4
+ *  / \
+ * 3   6
+ * Output: false
+ * Explanation: The input is: [5, 1, 4, null, null, 3, 6].
+ *              The root node's value is 5 but its right child's value is 4.
  */
-class BinaryTreeMaximumPathSum {
+
+package binarytree
+
+class ValidateBinarySearchTree {
     // Definition for a binary tree node.
     class TreeNode(var `val`: Int) {
         var left: TreeNode? = null
         var right: TreeNode? = null
     }
 
-    private var max = Int.MIN_VALUE
+    fun isValidBST(root: TreeNode?): Boolean {
+        val list = mutableListOf<Int>()
+        inorder(root, list)
 
-    fun maxPathSum(root: TreeNode?): Int {
-        if (root == null) {
-            return 0
+        for (i in 0 until list.size - 1) {
+            if (list[i] > list[i + 1]) {
+                return false
+            }
         }
 
-        max = Int.MIN_VALUE
-        lrd(root)
-        return max
+        return true
     }
 
-    private fun lrd(node: TreeNode?): Int = node?.let {
-        val left = lrd(node.left)
-        val right = lrd(node.right)
-        val current = node.`val`
-
-        var sum = current
-        sum = Math.max(sum, current + left)
-        sum = Math.max(sum, current + right)
-        sum = Math.max(sum, current + left + right)
-        if (max < sum) {
-            max = sum
+    fun inorder(node: TreeNode?, list: MutableList<Int>) {
+        node?.let {
+            inorder(it.left, list)
+            list.add(it.`val`)
+            inorder(it.right, list)
         }
-
-        var result = current
-        result = Math.max(result, current + left)
-        result = Math.max(result, current + right)
-        return@let result
-    } ?: 0
+    }
 }

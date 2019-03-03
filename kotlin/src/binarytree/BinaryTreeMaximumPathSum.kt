@@ -23,54 +23,61 @@
  */
 
 /*
- * https://leetcode.com/problems/same-tree/
+ * https://leetcode.com/problems/binary-tree-maximum-path-sum/
  *
- * Given two binary trees, write a function to check if they are the same or not.
- * Two binary trees are considered the same if they are structurally identical and the nodes have the same value.
+ * Given a **non-empty** binary tree, find the maximum path sum.
+ *
+ * For this problem, a path is defined as any sequence of nodes
+ * from some starting node to any node in the tree along the parent-child connections.
+ *
+ * The path must contain **at least one node** and does not need to go through the root.
  *
  * Example 1:
- * Input:     1         1
- *           / \       / \
- *          2   3     2   3
- *        [1, 2, 3] [1, 2, 3]
- * Output: true
+ * Input: [1, 2, 3]
+ * Output: 6
  *
  * Example 2:
- * Input:     1         1
- *           /           \
- *          2             2
- *        [1, 2] [1, null, 2]
- * Output: false
- *
- * Example 3:
- * Input:     1         1
- *           / \       / \
- *          2   1     1   2
- *        [1, 2, 1] [1, 1, 2]
- * Output: false
+ * Input: [-10, 9, 20, null, null, 15, 7]
+ * Output: 42
  */
-class SameTree {
+
+package binarytree
+
+class BinaryTreeMaximumPathSum {
     // Definition for a binary tree node.
     class TreeNode(var `val`: Int) {
         var left: TreeNode? = null
         var right: TreeNode? = null
     }
 
-    fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
-        if (p == null && q == null) {
-            return true
-        } else if (p == null && q != null) {
-            return false
-        } else if (p != null && q == null) {
-            return false
+    private var max = Int.MIN_VALUE
+
+    fun maxPathSum(root: TreeNode?): Int {
+        if (root == null) {
+            return 0
         }
 
-        return if (p!!.`val` != q!!.`val`) {
-            false
-        } else {
-            val left = isSameTree(p.left, q.left)
-            val right = isSameTree(p.right, q.right)
-            left && right
-        }
+        max = Int.MIN_VALUE
+        lrd(root)
+        return max
     }
+
+    private fun lrd(node: TreeNode?): Int = node?.let {
+        val left = lrd(node.left)
+        val right = lrd(node.right)
+        val current = node.`val`
+
+        var sum = current
+        sum = Math.max(sum, current + left)
+        sum = Math.max(sum, current + right)
+        sum = Math.max(sum, current + left + right)
+        if (max < sum) {
+            max = sum
+        }
+
+        var result = current
+        result = Math.max(result, current + left)
+        result = Math.max(result, current + right)
+        return@let result
+    } ?: 0
 }
