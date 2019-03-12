@@ -62,7 +62,7 @@ import java.util.*
 class KthSmallestElementInABST {
     fun kthSmallest(root: TreeNode?, k: Int): Int {
         val queue = PriorityQueue<Int>()
-        dfs(root, queue)
+        bfs(root, queue)
 
         for (i in 0 until k - 1) {
             queue.poll()
@@ -71,11 +71,11 @@ class KthSmallestElementInABST {
         return queue.poll()
     }
 
-    private fun dfs(root: TreeNode?, queue: PriorityQueue<Int>) {
+    private fun bfs(root: TreeNode?, queue: PriorityQueue<Int>) {
         root?.let {
             queue.offer(it.`val`)
-            dfs(it.left, queue)
-            dfs(it.right, queue)
+            bfs(it.left, queue)
+            bfs(it.right, queue)
         }
     }
 }
