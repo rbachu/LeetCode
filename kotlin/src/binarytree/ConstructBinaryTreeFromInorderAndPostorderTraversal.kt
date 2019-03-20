@@ -23,46 +23,46 @@
  */
 
 /*
- * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+ * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
  *
- * Given preorder and inorder traversal of a tree, construct the binary tree.
+ * Given inorder and postorder traversal of a tree, construct the binary tree.
  *
  * Note:
  * You may assume that duplicates do not exist in the tree.
  *
  * For example, given
- * preorder = [3, 9, 20, 15, 7]
- * inorder =  [9, 3, 15, 20, 7]
+ * inorder =   [9, 3, 15, 20, 7]
+ * postorder = [9, 15, 7, 20, 3]
  *
  * Return the following binary tree:
- *             3
- *            / \
- *           9  20
- *          / \
- *         15  7
+ *              3
+ *             / \
+ *            9  20
+ *           / \
+ *          15  7
  */
 
 package binarytree
 
-class ConstructBinaryTreeFromPreorderAndInorderTraversal {
-    fun buildTree(preorder: IntArray, inorder: IntArray): TreeNode? {
-        if (preorder.isEmpty() || inorder.isEmpty()) {
+class ConstructBinaryTreeFromInorderAndPostorderTraversal {
+    fun buildTree(inorder: IntArray, postorder: IntArray): TreeNode? {
+        if (inorder.isEmpty() || postorder.isEmpty()) {
             return null
         }
 
-        val root = TreeNode(preorder[0])
-        val index = inorder.indexOf(preorder[0])
+        val root = TreeNode(postorder[postorder.lastIndex])
+        val index = inorder.indexOf(postorder[postorder.lastIndex])
 
         if (index > 0) {
             root.left = buildTree(
-                    preorder.copyOfRange(1, index + 1),
-                    inorder.copyOfRange(0, index))
+                    inorder.copyOfRange(0, index),
+                    postorder.copyOfRange(0, index))
         }
 
-        if (preorder.size - index > 0) {
+        if (inorder.size - index > 0) {
             root.right = buildTree(
-                    preorder.copyOfRange(index + 1, preorder.size),
-                    inorder.copyOfRange(index + 1, inorder.size))
+                    inorder.copyOfRange(index + 1, inorder.size),
+                    postorder.copyOfRange(index, postorder.size - 1))
         }
 
         return root
